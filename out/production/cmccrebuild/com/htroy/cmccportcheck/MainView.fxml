@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="mainVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.htroy.cmccportcheck.Controller">
+   <children>
+      <VBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0">
+         <children>
+            <Label text="移动交换机端口测试">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <HBox fx:id="resShowLabelHBox" alignment="CENTER" prefHeight="100.0" prefWidth="600.0" spacing="8.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <VBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0">
+         <children>
+            <Label fx:id="informationLabel">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox prefHeight="100.0" prefWidth="600.0">
+         <children>
+            <HBox fx:id="evenPortBtnHBox" alignment="CENTER" prefHeight="50.0" prefWidth="600.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="oddPortBtnHBox" alignment="CENTER" prefHeight="50.0" prefWidth="600.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#checkSelectPort" text="测试" />
+            <Button mnemonicParsing="false" onAction="#uploadTestRs" text="上传" />
+            <Button mnemonicParsing="false" onAction="#reConnect" text="重连" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <VBox alignment="CENTER" spacing="10.0">
+         <children>
+            <Label text="交换机信息" />
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label text="交换机SN:" />
+                  <TextField fx:id="switchSnText" maxWidth="150.0" minWidth="40.0" />
+                  <Label text="位于:" />
+                  <RadioButton fx:id="ABbRBtn" mnemonicParsing="false" selected="true" text="AB">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="group" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="CDbRBtn" mnemonicParsing="false" text="CD" toggleGroup="$group" />
+                  <TextField fx:id="switchFloorText" prefWidth="40.0" />
+                  <Label text="楼" />
+               </children>
+            </HBox>
+            <Label text="测试的时候如未响应，此时正在进行拨号，请稍等测试结果，测试前请设置一个PPPoE拨号连接命名为aaa" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</VBox>
